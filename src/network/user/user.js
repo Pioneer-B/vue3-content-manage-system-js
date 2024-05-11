@@ -2,12 +2,12 @@ import Request, { mockRequest } from '../index'
 
 // 这里的url,调用函数时传入，因为 每个页面的列表数据接口的url都有相似的规律，
 // 为了抽取 简化代码，这里只写了一个函数，url调用时才传入
-// export function getUserList(url, data = {}) {
-//     return Request.post({
-//         url,
-//         data,
-//     })
-// }
+export function getUserList(url, data = {}) {
+    return Request.post({
+        url,
+        data,
+    })
+}
 
 export function deleteUser(url) {
     return Request.delete({
@@ -30,7 +30,7 @@ export function updateUser(url, id, data) {
 }
 
 // --------------------------------------------------------------------------------------------------------------
-export function getUserList(url, data = {}) {
+export function getUserList1(url, data = {}) {
     if (url === '/users/list') {
         return mockRequest.post({
             url: '/post',

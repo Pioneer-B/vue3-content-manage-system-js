@@ -1,34 +1,34 @@
 import Request, { mockRequest } from '../index'
 
-// export function accountLoginRequest({ name, password } = {}) {
-//     return Request.post({
-//         url: '/login',
-//         data: { name, password },
-//     })
-// }
+export function accountLoginRequest({ name, password } = {}) {
+    return Request.post({
+        url: '/login',
+        data: { name, password },
+    })
+}
 
-// export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
-//     return Request.post({
-//         url,
-//         data: { offset, size },
-//     })
-// }
+export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
+    return Request.post({
+        url,
+        data: { offset, size },
+    })
+}
 
-// export function getUserInfoById(id) {
-//     return Request.get({
-//         url: '/users/' + id,
-//     })
-// }
+export function getUserInfoById(id) {
+    return Request.get({
+        url: '/users/' + id,
+    })
+}
 
-// export function getUserMenusByRoleId(id) {
-//     return Request.get({
-//         url: '/role/' + id + '/menu',
-//     })
-// }
+export function getUserMenusByRoleId(id) {
+    return Request.get({
+        url: '/role/' + id + '/menu',
+    })
+}
 
 // ---------------------------------------------
 
-export function accountLoginRequest({ name, password } = {}) {
+export function accountLoginRequest1({ name, password } = {}) {
     return mockRequest.post({
         url: '/post',
         data: {
@@ -39,7 +39,7 @@ export function accountLoginRequest({ name, password } = {}) {
     })
 }
 
-export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
+export function getPageListData1(url, { offset = 0, size = 1000 } = {}) {
     if (url === '/department/list') {
         return mockRequest.post({
             url: '/post',
@@ -3257,7 +3257,7 @@ export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
     }
 }
 
-export function getUserInfoById(id) {
+export function getUserInfoById1(id) {
     return mockRequest.post({
         url: '/post',
         data: {
@@ -3287,7 +3287,7 @@ export function getUserInfoById(id) {
     })
 }
 
-export function getUserMenusByRoleId(id) {
+export function getUserMenusByRoleId1(id) {
     return mockRequest.post({
         url: '/post',
         data: [
