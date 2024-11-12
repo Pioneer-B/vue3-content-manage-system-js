@@ -30,12 +30,6 @@
         },
     })
     const emit = defineEmits(['update'])
-    watch(
-        () => props.value,
-        () => {
-            valueHtml.value = props.value
-        }
-    )
 
     // 编辑器实例，必须用 shallowRef
     const editorRef = shallowRef()
@@ -118,6 +112,14 @@
     //     const curToolbarConfig = toolbar.getConfig()
     //     console.log(curToolbarConfig.toolbarKeys) // 当前菜单排序和分组
     // })
+
+    watch(
+        () => props.value,
+        () => {
+            valueHtml.value = props.value
+        },
+        { immediate: true }
+    )
 
     // 组件销毁时，也及时销毁编辑器
     onBeforeUnmount(() => {

@@ -7,20 +7,20 @@ export function accountLoginRequest({ name, password } = {}) {
     })
 }
 
-export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
+export function getPageListData1(url, { offset = 0, size = 1000 } = {}) {
     return Request.post({
         url,
         data: { offset, size },
     })
 }
 
-export function getUserInfoById(id) {
+export function getUserInfoById1(id) {
     return Request.get({
         url: '/users/' + id,
     })
 }
 
-export function getUserMenusByRoleId(id) {
+export function getUserMenusByRoleId1(id) {
     return Request.get({
         url: '/role/' + id + '/menu',
     })
@@ -39,7 +39,7 @@ export function accountLoginRequest1({ name, password } = {}) {
     })
 }
 
-export function getPageListData1(url, { offset = 0, size = 1000 } = {}) {
+export function getPageListData(url, { offset = 0, size = 1000 } = {}) {
     if (url === '/department/list') {
         return mockRequest.post({
             url: '/post',
@@ -3257,7 +3257,7 @@ export function getPageListData1(url, { offset = 0, size = 1000 } = {}) {
     }
 }
 
-export function getUserInfoById1(id) {
+export function getUserInfoById(id) {
     return mockRequest.post({
         url: '/post',
         data: {
@@ -3287,7 +3287,7 @@ export function getUserInfoById1(id) {
     })
 }
 
-export function getUserMenusByRoleId1(id) {
+export function getUserMenusByRoleId(id) {
     return mockRequest.post({
         url: '/post',
         data: [

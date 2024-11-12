@@ -25,6 +25,7 @@
 
     // antd
     const { menu, parentMenu } = getMenuByPath(items.value, route.path)
+    console.log(menu, parentMenu)
     const selectedKeys = ref([menu.key])
     const openKeys = ref([parentMenu.key])
 
