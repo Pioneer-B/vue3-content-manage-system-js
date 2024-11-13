@@ -1,12 +1,16 @@
 export function mapUserMenu(userMenu) {
+    let modules = import.meta.glob('@/views/main/*/**/*.vue')
+    // console.log(modules)
     const result = []
     userMenu.forEach((item) => {
         item.children.forEach((i) => {
             const name = i.url.substring(i.url.lastIndexOf('/') + 1)
+            // console.log(`/src/views${i.url}/${name}.vue`)
             const obj = {
                 path: i.url,
                 name,
-                component: () => import(`@/views${i.url}/${name}.vue`),
+                // component: () => import(`@/views${i.url}/${name}.vue`),
+                component: modules[`/src/views${i.url}/${name}.vue`],
                 // 拼接后的形式：@/view/main/product/category/category.vue
             }
             result.push(obj)

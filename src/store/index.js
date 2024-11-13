@@ -69,18 +69,21 @@ export const useUser = defineStore('user', {
             const { code: code2, data: data2 } = await getPageListData('/menu/list')
 
             // 2.保存数据
-            if (code === 0) {
-                this.departmentList = data.list
-                storage.setStorage('departmentList', data.list)
-            }
-            if (code1 === 0) {
-                this.roleList = data1.list
-                storage.setStorage('roleList', data1.list)
-            }
-            if (code2 === 0) {
-                this.menuList = data2.list
-                storage.setStorage('menuList', data2.list)
-            }
+            // if (code === 0) {
+            this.departmentList = data.list
+            storage.setStorage('departmentList', data.list)
+            // }
+            // if (code1 === 0) {
+            this.roleList = data1.list
+            storage.setStorage('roleList', data1.list)
+            // }
+            console.log(code, data)
+            console.log(code1, data1)
+            console.log(code2, data2)
+            // if (code2 === 0) {
+            this.menuList = data2.list
+            storage.setStorage('menuList', data2.list)
+            // }
         },
         // 请求用户信息
         async getUserInfo(id) {

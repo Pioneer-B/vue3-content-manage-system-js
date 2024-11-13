@@ -6,10 +6,11 @@ import storage from '@/utils/storage'
 // 例如开发环境下process.env.NODE_ENV的值为: development。生成环境下为: production、测试环境下为: test
 let BASE_URL = ''
 const TIME_OUT = 10000
-if (process.env.NODE_ENV === 'development') {
+console.log(import.meta, import.meta.env)
+if (import.meta.env.MODE === 'development') {
     BASE_URL = 'http://123.207.32.32:5000/'
     // BASE_URL = 'http://httpbin.org'
-} else if (process.env.NODE_ENV === 'production') {
+} else if (import.meta.env.MODE === 'production') {
     BASE_URL = 'http://coderwhy.org/prod'
 } else {
     BASE_URL = 'http://coderwhy.org/test'

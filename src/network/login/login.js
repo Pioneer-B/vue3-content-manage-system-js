@@ -1,6 +1,6 @@
 import Request, { mockRequest } from '../index'
 
-export function accountLoginRequest({ name, password } = {}) {
+export function accountLoginRequest1({ name, password } = {}) {
     return Request.post({
         url: '/login',
         data: { name, password },
@@ -28,7 +28,7 @@ export function getUserMenusByRoleId1(id) {
 
 // ---------------------------------------------
 
-export function accountLoginRequest1({ name, password } = {}) {
+export function accountLoginRequest({ name, password } = {}) {
     return mockRequest.post({
         url: '/post',
         data: {
